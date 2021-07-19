@@ -8,11 +8,13 @@
 const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const filterOption = document.querySelector('.filter-todo');
 
 //Event Listeners
 
 todoButton.addEventListener('click', addTodo);
-todoList.addEventListener('click', deleteCheck)
+todoList.addEventListener('click', deleteCheck);
+filterOption.addEventListener('click', filterTodo);
 
 
 
@@ -88,6 +90,31 @@ function deleteCheck(event){
 
 }
 
+function filterTodo(e) {
+    const   todos = todoList.childNodes;
+   todos.forEach(function(todo){
+       switch (e.target.value){
+           case "all":
+               todo.style.display = "flex";
+               break
+            case "completed":
+                if (todo.classList.contains('completed')) {
+                    todo.style.display = "flex";
+                } else {
+                    todo.style.display = "none";
+                }  
+            case "uncompleted":
+                if (todo.classList.contains('completed')){
+                    todo.style.display = "none";
+                } else {
+                    todo.style.display = "flex"
+                }
+
+       }
+
+
+   })
+}
 
 document.cookie = "username=John Doe; expires=Thu, 18 Dec 2025 12:00:00 UTC";
 
