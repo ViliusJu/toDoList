@@ -14,6 +14,11 @@ body {
     color: rgb(250, 236, 236);
 }
 
+h3 {
+
+text-align: center;
+}
+
 header {
     font-size: 1.5 rem;
     min-height: 20vh;
@@ -109,7 +114,7 @@ form button:hover {
 }
 
 .fall {
-    transform: translateY(8rem) rotateZ(20deg);
+    transform: translateY(8rem) rotateY(90deg);
     opacity: 0;
 }
 

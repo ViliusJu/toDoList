@@ -1,6 +1,5 @@
 
-
-
+ let taskNumber = 0;
 
 
 /// Selectors
@@ -9,6 +8,8 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
+const trashButton = document.querySelector('trash-btn');
+const checkButton = document.querySelector("complete-btn");
 
 //Event Listeners
 
@@ -20,11 +21,18 @@ filterOption.addEventListener('click', filterTodo);
 
 
 
+
+
 //Functions
+
+
+
 
 function addTodo(event){
 
-    //Prevent form from submitting
+ 
+
+         //Prevent form from submitting
 
     event.preventDefault();
 
@@ -35,24 +43,49 @@ function addTodo(event){
 
     //Create list item
 
-    const newTodo = document.createElement("li");
-    newTodo.innerText = todoInput.value;
-    newTodo.classList.add('todo-item');
-    todoDiv.appendChild(newTodo);
+    if(todoInput.value == ""){
+        alert("Please insert a task")
+    }  else if (taskNumber >= 3) {
+        alert("Buy premiuim, if you want to store more than 3 task");
 
-    //Completed button
+    }  else {
+        taskNumber++;
+        console.log(taskNumber);
+        const newTodo = document.createElement("li"); 
+        newTodo.innerText = todoInput.value;
+        newTodo.classList.add('todo-item');
+        todoDiv.appendChild(newTodo);
 
+
+
+
+        //Completed button
+        
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class = "fas fa-check"></i>';
     completedButton.classList.add('complete-btn');
     todoDiv.appendChild(completedButton); 	
+    
+    
+
+ 
 
      //Trash button
 
-     const trashButton = document.createElement('button');
-     trashButton.innerHTML = '<i class = "fas fa-trash"></i>';
-     trashButton.classList.add('trash-btn');
-     todoDiv.appendChild(trashButton); 
+
+
+    
+        
+        const trashButton = document.createElement('button');
+        trashButton.innerHTML = '<i class = "fas fa-trash"></i>';
+        trashButton.classList.add('trash-btn');
+        todoDiv.appendChild(trashButton); 
+        trashButton.addEventListener('click', function name(params) {
+            alert("The task is deleted");
+            taskNumber--;
+            console.log(taskNumber);
+            
+        })
 
      //Apend to list
 
@@ -62,8 +95,27 @@ function addTodo(event){
 
      todoInput.value = "";
 
+ 
+
     
-}
+
+
+
+
+
+    }
+
+
+    
+
+   
+   
+    }
+  
+   
+
+    
+
 
 
 function deleteCheck(event){
@@ -120,6 +172,10 @@ function filterTodo(e) {
 }
 
 document.cookie = "username=John Doe; expires=Thu, 18 Dec 2025 12:00:00 UTC";
+
+
+
+
 
 
 
