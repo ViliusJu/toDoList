@@ -1,158 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
-    background-image: linear-gradient(to right bottom, #7dabf0, #00c4fc, #00d7d4, #00df81, #b7da10);
-    min-height: 100vh;
-    color: rgb(250, 236, 236);
+  background-image: linear-gradient(
+    to right bottom,
+    #7dabf0,
+    #00c4fc,
+    #00d7d4,
+    #00df81,
+    #b7da10
+  );
+  min-height: 100vh;
+  color: rgb(250, 236, 236);
 }
 
 h3 {
-
-text-align: center;
+  text-align: center;
 }
 
 header {
-    font-size: 1.5 rem;
-    min-height: 20vh;
+  font-size: 1.5 rem;
+  min-height: 20vh;
 }
 
 header,
 form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form input,
 form button {
-    padding: 0.5 rem;
-    font-size: 2rem;
-    border: none;
-    background: #fff;
+  padding: 0.2rem;
+  font-size: 2rem;
+  border: none;
+  background: #fff;
+  font-family: sans-serif;
 }
 
-
 form button {
-    color:#7dabf0;
-    background: #fff;
-    cursor: pointer;
-    transition: all 0.5 s ease;
+  color: #7dabf0;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.5 s ease;
 }
 
 form button:hover {
-    background:#00df81;
-    color: #fff;
+  background: #00df81;
+  color: #fff;
 }
 
 .todo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .todo-list {
-    min-width: 30%;
-    list-style: none;
+  min-width: 30%;
+  list-style: none;
 }
 
 .todo {
-    margin: 0.5rem;
-    background: #fff;
-    color:#000;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    transition: all 1s ease;
-
+  margin: 0.5rem;
+  background: #fff;
+  color: #000;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  transition: all 1s ease;
 }
 
 .todo li {
-    flex: 1;
+  flex: 1;
 }
-
 
 .trash-btn,
-.complete-btn{
-    color:#fff;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-    font-size: 1rem;
+.complete-btn {
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
 }
 
-.trash-btn{
-    background-color: rgb(238, 27, 27);
+.trash-btn {
+  background-color: rgb(238, 27, 27);
 }
-.complete-btn{
-    background-color: rgb(14, 133, 71);
+.complete-btn {
+  background-color: rgb(14, 133, 71);
 }
 
 .todo-item {
-    margin: 0;
+  margin: 0;
 }
 
 .fa-trash,
 .fa-check {
-    pointer-events: none;
-
+  pointer-events: none;
 }
 
-.completed{
-    text-decoration: line-through;
-    opacity: .5;
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 .fall {
-    transform: translateY(8rem) rotateY(90deg);
-    opacity: 0;
+  transform: translateY(8rem) rotateY(90deg);
+  opacity: 0;
 }
 
-
 select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: auto;
-    border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: auto;
+  border: none;
 }
 
 .select {
-    margin: 1rem;
-    position: relative;
-    overflow: hidden;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
 }
 
 select {
-    color: #00c4fc;
-    width: 10rem;
-    cursor: pointer;
-    padding: 1rem;
+  color: #00c4fc;
+  width: 10rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.filter-todo {
+  color: #000;
+  font-size: 1rem;
+  padding: 0.75rem;
+  font-weight: 800;
 }
 
 .select::after {
-    content: "\25BC";
-    position: absolute;
-    background-color: #7dabf0;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    pointer-events: none;
-    transition: all .5 ease;
-
+  content: "\25BC";
+  position: absolute;
+  background-color: #7dabf0;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  pointer-events: none;
+  transition: all 0.5 ease;
 }
 
 .select:hover::after {
-    background-color: #fff;
-    color: #b7da10;
+  background-color: #fff;
+  color: #b7da10;
+}
+
+@media only screen and (max-width: 660px) {
+  form {
+    display: block;
+  }
+
+  .filter-todo {
+    display: block;
+    margin: auto;
+  }
+  .todo-button {
+    display: block;
+    margin: auto;
+  }
+  .select::after {
+    display: none;
+  }
+  .todo-input {
+    display: block;
+    margin: auto;
+  }
 }
